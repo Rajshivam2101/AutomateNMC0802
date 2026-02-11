@@ -1,0 +1,19 @@
+{
+  "userData": {
+    "cityName1": "MAMZER - DUBAI - United Arab Emirates",
+    "cityName2": "Al BATEEN - ABU DHABI - United Arab Emirates",
+    "cityName3": "AL QUSAIS INDUSTRIAL - 2 - DUBAI - United Arab Emirates",
+    "cityName4": "Motor City - DUBAI - United Arab Emirates",
+    "cityName5": "MUHAISANAH - 4 - DUBAI - United Arab Emirates",
+
+
+    "salutationList1": "MR.     ",
+    "salutationList2": "Mrs.",
+
+    "genderList1": "Male",
+    "genderList2": "Female",
+
+    "patientActiveList1": "Not Applicable",
+    "patientActiveList2": "Yes"
+  }
+}
