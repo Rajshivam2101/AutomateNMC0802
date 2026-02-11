@@ -5,15 +5,17 @@
     "cityName3": "AL QUSAIS INDUSTRIAL - 2 - DUBAI - United Arab Emirates",
     "cityName4": "Motor City - DUBAI - United Arab Emirates",
     "cityName5": "MUHAISANAH - 4 - DUBAI - United Arab Emirates",
-
-
     "salutationList1": "MR.     ",
     "salutationList2": "Mrs.",
-
     "genderList1": "Male",
     "genderList2": "Female",
-
     "patientActiveList1": "Not Applicable",
-    "patientActiveList2": "Yes"
+    "patientActiveList2": "Yes",
+    "insuranceCompany": "DAMAN - NATIONAL HEALTH INSURANCE COMPANY",
+    "tpa": "DAMAN - NATIONAL HEALTH INSURANCE COMPANY",
+    "networkPlanType": "RH DAMAN ADVANCED PLUS ADNOC CLINICS",
+    "planName": "RH DAMAN BRONZECORE ADVANCED PLUS (C0,D30,PH30,DN20,MAT)",
+    "startDate": "11-02-2026",
+    "endDate": "15-02-2026"
   }
 }

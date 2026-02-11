@@ -159,7 +159,7 @@ public class OpRegistrationPage {
 
         String salutationList1 = JsonUtils.getValue("userData", "salutationList1");
         Waits.waitForVisibility(driver, opRegistrationHeader, 25);
-        CommonMethods.selectByVisibleText(salutationChang, salutationList1);
+        SelectCommonMethods.selectByVisibleText(salutationChang, salutationList1);
 
         //EnterFirstName
         firstName.sendKeys(RandomUtils.randomString(7));
@@ -213,54 +213,54 @@ public class OpRegistrationPage {
 
         String genderList1 = JsonUtils.getValue("userData", "genderList1");
         Waits.waitForClickable(driver, gender, 10);
-        CommonMethods.selectByVisibleText(gender, genderList1);
+        SelectCommonMethods.selectByVisibleText(gender, genderList1);
 
         nextToKinName.sendKeys(RandomUtils.randomString(8));
 
         Waits.waitForClickable(driver, relation, 10);
-        CommonMethods.selectRandomOption(relation);
+        SelectCommonMethods.selectRandomOption(relation);
 
     }
 
     public void selectCityName() {
 
-        CommonMethods.selectFromAutoSuggest(driver, patientCityFieldName, patientCityNameList, "MAMZER - DUBAI - United Arab Emirates");
+        SelectCommonMethods.selectFromAutoSuggest(driver, patientCityFieldName, patientCityNameList, "MAMZER - DUBAI - United Arab Emirates");
     }
 
     public void selectCityName(String str) {
 
-        CommonMethods.selectFromAutoSuggest(driver, patientCityFieldName, patientCityNameList, str);
+        SelectCommonMethods.selectFromAutoSuggest(driver, patientCityFieldName, patientCityNameList, str);
     }
 
     public void AdditionalPatientInformation() {
 
         String patientActiveProblemList = JsonUtils.getValue("userData", "patientActiveList1");
         Waits.waitForClickable(driver, patientActiveProblem, 15);
-        CommonMethods.selectByVisibleText(patientActiveProblem, patientActiveProblemList);
+        SelectCommonMethods.selectByVisibleText(patientActiveProblem, patientActiveProblemList);
 
         Waits.waitForClickable(driver, patientNationality, 15);
-        CommonMethods.selectByVisibleText(patientNationality, "Indian");
+        SelectCommonMethods.selectByVisibleText(patientNationality, "Indian");
 
         Waits.waitForClickable(driver, patientUnifiedHealthCare, 15);
-        CommonMethods.selectByVisibleText(patientUnifiedHealthCare, "VIP Status");
+        SelectCommonMethods.selectByVisibleText(patientUnifiedHealthCare, "VIP Status");
 
         Waits.waitForClickable(driver, patientCountryOfResidence, 15);
-        CommonMethods.selectByVisibleText(patientCountryOfResidence, "India");
+        SelectCommonMethods.selectByVisibleText(patientCountryOfResidence, "India");
 
         Waits.waitForClickable(driver, patientOccupation, 15);
-        CommonMethods.selectByVisibleText(patientOccupation, "SALARIED");
+        SelectCommonMethods.selectByVisibleText(patientOccupation, "SALARIED");
 
         Waits.waitForClickable(driver, patientConsentCollected, 15);
-        CommonMethods.selectByVisibleText(patientConsentCollected, "Yes");
+        SelectCommonMethods.selectByVisibleText(patientConsentCollected, "Yes");
 
         Waits.waitForClickable(driver, patientReferralSource, 15);
-        CommonMethods.selectByVisibleText(patientReferralSource, "ADNOC DISTRIBUTION");
+        SelectCommonMethods.selectByVisibleText(patientReferralSource, "ADNOC DISTRIBUTION");
 
         Waits.waitForClickable(driver, patientSector, 15);
-        CommonMethods.selectByVisibleText(patientSector, "Energy");
+        SelectCommonMethods.selectByVisibleText(patientSector, "Energy");
 
         Waits.waitForClickable(driver, patientIdType, 15);
-        CommonMethods.selectByVisibleText(patientIdType, "Expatriate resident without a card");
+        SelectCommonMethods.selectByVisibleText(patientIdType, "Expatriate resident without a card");
 
 
         patientPassportNo.sendKeys(RandomUtils.randomNumber(6));
@@ -277,10 +277,10 @@ public class OpRegistrationPage {
     public void additionalVisitInformation() {
 
         Waits.waitForClickable(driver, smsConsent, 10);
-        CommonMethods.selectByVisibleText(smsConsent, "YES");
+        SelectCommonMethods.selectByVisibleText(smsConsent, "YES");
 
         Waits.waitForClickable(driver, patientSurveyConsent, 10);
-        CommonMethods.selectByVisibleText(patientSurveyConsent, "YES");
+        SelectCommonMethods.selectByVisibleText(patientSurveyConsent, "YES");
 
     }
 
@@ -288,13 +288,13 @@ public class OpRegistrationPage {
     public void VisitInfo() {
 
         Waits.waitForVisibility(driver, patientDepartment, 15);
-        CommonMethods.selectByVisibleText(patientDepartment, "Surgery");
+        SelectCommonMethods.selectByVisibleText(patientDepartment, "Surgery");
 
         Waits.waitForVisibility(driver, consultingDoctor, 15);
-        CommonMethods.selectFromAutoSuggest(driver, consultingDoctor, consultingDoctorList, "Dr. Aaron Paul Garrison (Surgery)(GD17522)");
+        SelectCommonMethods.selectFromAutoSuggest(driver, consultingDoctor, consultingDoctorList, "Dr. Aaron Paul Garrison (Surgery)(GD17522)");
 
         Waits.waitForVisibility(driver, patientConsultationType, 15);
-        CommonMethods.selectByVisibleText(patientConsultationType, "01204-EXAM-DIAG OF SPECIFIC SITUATION");
+        SelectCommonMethods.selectByVisibleText(patientConsultationType, "01204-EXAM-DIAG OF SPECIFIC SITUATION");
 
         Waits.waitForClickable(driver, clickRegistration, 15);
         CommonMethods.doubleClick(driver, clickRegistration);

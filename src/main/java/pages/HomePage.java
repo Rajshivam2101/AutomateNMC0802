@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import utilty.Assertutilits;
 import utilty.Logger;
 import utilty.Waits;
 
@@ -25,7 +26,9 @@ public class HomePage {
 
     public void validateScreen() {
         Waits.waitForVisibility(driver, validation, 10);
-        Assert.assertTrue(validation.isDisplayed());
+        //Assert.assertTrue(validation.isDisplayed());
+        Assertutilits.assertTrue(validation.isDisplayed());
+
 
     }
 }

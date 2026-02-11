@@ -1,6 +1,7 @@
 package stepDefinition;
 
 import hooks.Hooks;
+import io.cucumber.java.PendingException;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.openqa.selenium.WebDriver;
@@ -59,6 +60,8 @@ public class OpRegistrationSteps {
         opRegistrationPage.additionalVisitInformation();
         opRegistrationPage.selectCityName(str);
     }
+
+
 }
 
 //    @Then("user validates through Name for Salutations")
