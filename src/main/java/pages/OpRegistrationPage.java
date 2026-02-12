@@ -1,5 +1,7 @@
 package pages;
 
+import EnumType.ConfigKey;
+import config.ConfigLoader;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -179,15 +181,6 @@ public class OpRegistrationPage {
         //Enter Contact No.:
         contactNumber.sendKeys(RandomUtils.randomNumber(10));
 
-
-        //Enter DOB
-//        Waits.waitForClickable(driver, birthdayDay, 10);
-//        birthdayDay.sendKeys(RandomUtils.randomNumber(1));
-//        Waits.waitForClickable(driver, birthdayMonth, 10);
-//        birthdayMonth.sendKeys(RandomUtils.randomNumber(1));
-//        Waits.waitForClickable(driver, birthdayYear, 10);
-//        birthdayYear.sendKeys(RandomUtils.randomNumber(4));
-
         LocalDate startDate = LocalDate.of(1990, 1, 1);
         LocalDate endDate = LocalDate.of(2005, 12, 31);
 
@@ -223,7 +216,6 @@ public class OpRegistrationPage {
     }
 
     public void selectCityName() {
-
         SelectCommonMethods.selectFromAutoSuggest(driver, patientCityFieldName, patientCityNameList, "MAMZER - DUBAI - United Arab Emirates");
     }
 
@@ -273,7 +265,7 @@ public class OpRegistrationPage {
 
     }
 
-    //Additional Visit Information Section
+
     public void additionalVisitInformation() {
 
         Waits.waitForClickable(driver, smsConsent, 10);
@@ -281,24 +273,28 @@ public class OpRegistrationPage {
 
         Waits.waitForClickable(driver, patientSurveyConsent, 10);
         SelectCommonMethods.selectByVisibleText(patientSurveyConsent, "YES");
-
     }
 
-    //doctorCharge
+
     public void VisitInfo() {
 
-        Waits.waitForVisibility(driver, patientDepartment, 15);
-        SelectCommonMethods.selectByVisibleText(patientDepartment, "Surgery");
+        String deptName = ConfigLoader.get(ConfigKey.DEPETNAME);
+        Waits.waitForVisibility(driver, patientDepartment, 25);
+        SelectCommonMethods.selectByVisibleText(patientDepartment, deptName);
 
         Waits.waitForVisibility(driver, consultingDoctor, 15);
-        SelectCommonMethods.selectFromAutoSuggest(driver, consultingDoctor, consultingDoctorList, "Dr. Aaron Paul Garrison (Surgery)(GD17522)");
+        String docName = ConfigLoader.get(ConfigKey.DOCTORNAME);
+        SelectCommonMethods.selectFromAutoSuggest(driver, consultingDoctor, consultingDoctorList, docName);
 
         Waits.waitForVisibility(driver, patientConsultationType, 15);
-        SelectCommonMethods.selectByVisibleText(patientConsultationType, "01204-EXAM-DIAG OF SPECIFIC SITUATION");
+        String consultationType = ConfigLoader.get(ConfigKey.CONSULTATION);
+        SelectCommonMethods.selectByVisibleText(patientConsultationType, consultationType);
+
+//        SelectCommonMethods.selectByVisibleText(patientConsultationType, consultationPass);
 
         Waits.waitForClickable(driver, clickRegistration, 15);
         CommonMethods.doubleClick(driver, clickRegistration);
-        //driver.switchTo().alert().accept();
+
     }
 
     public void registrationDone() {

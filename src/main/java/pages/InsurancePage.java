@@ -1,17 +1,12 @@
 package pages;
 
-import io.cucumber.java.PendingException;
-import io.cucumber.java.en.And;
-import org.apache.commons.logging.Log;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Sleeper;
 import utilty.*;
 
 public class InsurancePage {
-
 
     WebDriver driver;
 
@@ -78,13 +73,11 @@ public class InsurancePage {
         primaryMemberId.sendKeys(RandomUtils.randomNumber(8));
 
 
-//        validityStartDate.click();
         String startDate = JsonUtils.getValue("userData", "startDate");
         validityStartDate.sendKeys(startDate);
         Logger.info("if start date is null:" + startDate);
 
-//        CommonMethods.jsClick(driver, validityEndDate);
-//        validityEndDate.click();
+
         String endDate = JsonUtils.getValue("userData", "endDate");
         validityEndDate.sendKeys(endDate);
         Logger.info("if end date is null:" + startDate);

@@ -1,12 +1,10 @@
 package stepDefinition;
 
 import hooks.Hooks;
-import io.cucumber.java.PendingException;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.openqa.selenium.WebDriver;
 import pages.OpRegistrationPage;
-
 
 public class OpRegistrationSteps {
 
@@ -36,12 +34,19 @@ public class OpRegistrationSteps {
         opRegistrationPage.basicInformation();
 
     }
-
     @And("User enters all the Additional Patient Information")
     public void userEntersAllTheAdditionalPatientInformation() {
+
         opRegistrationPage.AdditionalPatientInformation();
         opRegistrationPage.additionalVisitInformation();
         opRegistrationPage.selectCityName();
+
+    }
+    @And("User enters all the Additional Patient Information and city name as {string}")
+    public void userEntersAllTheAdditionalPatientInformationAndCityNameAs(String str) {
+        opRegistrationPage.AdditionalPatientInformation();
+        opRegistrationPage.additionalVisitInformation();
+        opRegistrationPage.selectCityName(str);
     }
 
     @And("User enters Visit Information")
@@ -54,39 +59,13 @@ public class OpRegistrationSteps {
         opRegistrationPage.registrationDone();
     }
 
-    @And("User enters all the Additional Patient Information and city name as {string}")
-    public void userEntersAllTheAdditionalPatientInformationAndCityNameAs(String str) {
-        opRegistrationPage.AdditionalPatientInformation();
-        opRegistrationPage.additionalVisitInformation();
-        opRegistrationPage.selectCityName(str);
-    }
-
-
 }
-
-//    @Then("user validates through Name for Salutations")
-//    public void userValidatesThroughNameForSalutations(DataTable dataTable) {
-//        List<String> expected = dataTable.asList();
-//        List<WebElement> actual = doOpRegistrationPage.salutationList;
-//        for (String expectedValue : expected) {
-//            for (WebElement element : actual) {
-//                String actualValue = element.getText();
-//                Assert.assertEquals(expectedValue, actualValue);
-//            }
-//        }
+//    @And("User enters Visit Information and with multiple teleconsultation {string}")
+//    public void userEntersVisitInformationAndWithMultipleTeleconsultation(String str) {
+//        opRegistrationPage.VisitInfo(str);
 //    }
 
-//    @Then("user validates through Name for Salutation List")
-//    public void userValidatesThroughNameForSalutationList(DataTable dataTable) {
 
-//        List<String> expected = dataTable.asList();
-//        List<WebElement> actual = doOpRegistrationPage.salutationList;
-//
-//
-//        for (int i = 0; i < expected.size(); i++) {
-//            String actualValue = actual.get(i).getText().trim();
-//            Assert.assertEquals(actualValue, expected.get(i), "Mismatch at index " + i
-//            );
-//        }
+
 
 

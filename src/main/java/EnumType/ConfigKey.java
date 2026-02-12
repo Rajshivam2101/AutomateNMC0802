@@ -11,8 +11,13 @@ public enum ConfigKey {
 
     USERNAME("username"),
 
-    PASSWORD("password");
+    PASSWORD("password"),
 
+    DOCTORNAME("doctorName"),
+
+    DEPETNAME("departmentOfPatient"),
+
+    CONSULTATION("consultationType");
 
     private final String key;
 

@@ -2,7 +2,6 @@ package drivermanager;
 
 import EnumType.ConfigKey;
 import config.ConfigLoader;
-import io.cucumber.java.it.Ed;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -83,16 +82,16 @@ public class DriverManager {
         String url = ConfigLoader.get(ConfigKey.URL);
         driver.get(url);
     }
-
-    public static void close() {
-
-        if (driver != null) {
-            Logger.info("Browser Closing");
-            driver.quit();
-
-
-        }
-    }
+//
+//    public static void close() {
+//
+//        if (driver != null) {
+//            Logger.info("Browser Closing");
+//            driver.quit();
+//
+//
+//        }
+//    }
 
 }
 
