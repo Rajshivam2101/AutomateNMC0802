@@ -1,5 +1,4 @@
 package stepDefinition;
-
 import hooks.Hooks;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
@@ -7,17 +6,13 @@ import org.openqa.selenium.WebDriver;
 import pages.OpRegistrationPage;
 
 public class OpRegistrationSteps {
-
     WebDriver driver;
     OpRegistrationPage opRegistrationPage;
 
-
     public OpRegistrationSteps() {
         this.driver = Hooks.getDriver();
-
         this.opRegistrationPage = new OpRegistrationPage(driver);
     }
-
 
     @Then("user open the OP registration screen and validates OP Registration header")
     public void userOpenTheOPRegistrationScreenAndValidatesOPRegistrationHeader() {

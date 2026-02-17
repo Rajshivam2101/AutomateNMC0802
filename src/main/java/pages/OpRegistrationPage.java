@@ -1,5 +1,6 @@
 package pages;
 
+import utilty.*;
 import EnumType.ConfigKey;
 import config.ConfigLoader;
 import org.junit.Assert;
@@ -7,8 +8,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import utilty.*;
-
 import java.time.LocalDate;
 import java.util.List;
 
