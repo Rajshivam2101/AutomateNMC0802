@@ -15,12 +15,12 @@ public class Hooks {
         DriverManager.initDriver();
     }
 
-    @After
-    public void tierDown() {
-        Logger.info("Execution Completed");
-
-        DriverManager.close();
-    }
+//    @After
+//    public void tierDown() {
+//        Logger.info("Execution Completed");
+//
+//        DriverManager.close();
+//    }
 
     public static WebDriver getDriver() {
         return DriverManager.getDriver();

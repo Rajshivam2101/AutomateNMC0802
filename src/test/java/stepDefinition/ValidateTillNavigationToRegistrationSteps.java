@@ -1,6 +1,7 @@
 package stepDefinition;
 
 import hooks.Hooks;
+import io.cucumber.java.PendingException;
 import io.cucumber.java.en.And;
 import org.openqa.selenium.WebDriver;
 import pages.ValidateTillNavigationToRegistrationPage;
