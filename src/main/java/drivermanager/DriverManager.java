@@ -83,15 +83,15 @@ public class DriverManager {
         driver.get(url);
     }
 
-    public static void close() {
-
-        if (driver != null) {
-            Logger.info("Browser Closing");
-            driver.quit();
-
-
-        }
-    }
+//    public static void close() {
+//
+//        if (driver != null) {
+//            Logger.info("Browser Closing");
+//            driver.quit();
+//
+//
+//        }
+//    }
 
 }
 

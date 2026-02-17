@@ -159,7 +159,7 @@ public class OpRegistrationPage {
         //Select SName
 
         String salutationList1 = JsonUtils.getValue("userData", "salutationList1");
-        Waits.waitForVisibility(driver, opRegistrationHeader, 25);
+        //Waits.waitForVisibility(driver, opRegistrationHeader, 30);
         SelectCommonMethods.selectByVisibleText(salutationChang, salutationList1);
 
         //EnterFirstName

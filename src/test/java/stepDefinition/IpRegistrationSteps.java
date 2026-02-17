@@ -1,7 +1,8 @@
 package stepDefinition;
 
 import hooks.Hooks;
-import pages.InsurancePage;
+import io.cucumber.java.PendingException;
+import io.cucumber.java.en.And;
 import utilty.*;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -17,7 +18,6 @@ public class IpRegistrationSteps {
         this.ipRegistrationPage = new IpRegistrationPage(driver);
     }
 
-
     @When("user clicks on the ip registration link.")
     public void userClicksOnTheIpRegistrationLink() {
         ipRegistrationPage.openIpRegistrationPage();
@@ -26,6 +26,16 @@ public class IpRegistrationSteps {
     @Then("user is in ip registration screen.")
     public void userIsInIpRegistrationScreen() {
         ipRegistrationPage.validateIpRegistrationScreen();
+    }
+
+    @And("user enter Admission Information details")
+    public void userEnterAdmissionInformationDetails() {
+        ipRegistrationPage.admissionInformation();
+    }
+
+    @Then("user validate the data")
+    public void userValidateTheData() {
+        ipRegistrationPage.validateRegistrationDetails();
 
     }
 }

@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(features = "src/test/resources/ipRegistration.feature",
         glue = {"hooks", "stepDefinition"},
         plugin = {"pretty", "html:target/cucumber-reports.html", "junit:target/cucumber-reports/Cucumber.xml"},
-        tags = "@testcase6",
+        tags = "@testcase7",
         monochrome = true)
 
 public class TestRunner {
