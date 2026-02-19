@@ -21,31 +21,34 @@ public class IpRegistrationPage {
     }
 
     @FindBy(xpath = "//div[@id='topmenu']//li//a[text()='Registration']")
-    WebElement openOptions;
+    private WebElement openOptions;
 
     @FindBy(xpath = "//div[@id='grp_registration']//li//a[text()='IP Registration']")
-    WebElement ipRegistration;
+    private WebElement ipRegistration;
 
     @FindBy(xpath = "//span[@class='pageHeader']")
-    WebElement validateIpRegistration;
+    private WebElement validateIpRegistration;
 
     @FindBy(xpath = "//select[@id='dept_name']")
-    WebElement departmentName;
+    private WebElement departmentName;
 
     @FindBy(xpath = "//input[@id='doctor_name']")
-    WebElement docName;
+    private WebElement docName;
 
     @FindBy(xpath = "//div[@id='doctor_wrapper']//div//div//div//ul//li")
-    List<WebElement> docNameList;
+    private List<WebElement> docNameList;
 
     @FindBy(xpath = "//select[@id='ward_id']")
-    WebElement wardNamee;
+    private WebElement wardNamee;
 
     @FindBy(xpath = "//select[@id='bed_id']")
-    WebElement bedName;
+    private WebElement bedName;
 
     @FindBy(xpath = "//button[@id='registerBtn']")
     private WebElement clickRegistration;
+
+    @FindBy(xpath = "//td//fieldset[@id='regInfo']//tr")
+    private List<WebElement> registrationDetails;
 
 
     public void openIpRegistrationPage() {
@@ -71,6 +74,7 @@ public class IpRegistrationPage {
         String doctorName = JsonUtils.getValue("userData", "doctorName");
         SelectCommonMethods.selectFromAutoSuggest(driver, docName, docNameList, doctorName);
 
+
         Waits.waitForVisibility(driver, docName, 15);
         String wardName = JsonUtils.getValue("userData", "wardName");
         SelectCommonMethods.selectByVisibleText(wardNamee, wardName);
@@ -82,9 +86,6 @@ public class IpRegistrationPage {
         CommonMethods.doubleClick(driver, clickRegistration);
 
     }
-
-    @FindBy(xpath = "//td//fieldset[@id='regInfo']//tr")
-    List<WebElement> registrationDetails;
 
     public void validateRegistrationDetails() {
         Waits.waitForVisibility(driver, validateIpRegistration, 25);
