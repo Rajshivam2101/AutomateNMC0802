@@ -1,11 +1,17 @@
 package utilty;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.List;
 import java.util.Random;
+
+import static utilty.Waits.driver;
 
 public class SelectCommonMethods {
 
@@ -84,7 +90,32 @@ public class SelectCommonMethods {
         throw new RuntimeException(
                 "Auto-suggest value not found: " + valueToSelect
         );
-
     }
+    //==================================AutoSelect==========================================
+    public void selectRandomFromAutocomplete(By inputField, By suggestionList) {
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+        // Click and type something (optional)
+        WebElement input = wait.until(ExpectedConditions.elementToBeClickable(inputField));
+        input.click();
+
+        // Wait for suggestions
+        List<WebElement> options = wait.until(
+                ExpectedConditions.visibilityOfAllElementsLocatedBy(suggestionList));
+
+        // Select random option
+        Random random = new Random();
+        int index = random.nextInt(options.size());
+
+        WebElement selectedOption = options.get(index);
+
+        String doctorName = selectedOption.getText();
+
+        selectedOption.click();
+
+        System.out.println("Selected Doctor: " + doctorName);
+    }
+
 
 }
