@@ -100,9 +100,5 @@ public class IpRegistrationPage {
 
     }
 
-    public void checkForRepo() {
-        System.out.println("HI");
-    }
-
 
 }
