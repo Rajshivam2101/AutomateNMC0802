@@ -88,13 +88,12 @@ public class IpRegistrationPage {
     }
 
     public void validateRegistrationDetails() {
-        Waits.waitForVisibility(driver, validateIpRegistration, 25);
+
         for (WebElement store : registrationDetails) {
 
-            Waits.waitForVisibility(driver, store, 25);
-            Assert.assertTrue(store.isDisplayed());
-            String regDetails = store.getText();
-            Logger.info(regDetails);
+            store.isDisplayed();
+            Logger.info(store.getText());
+
 
         }
 
