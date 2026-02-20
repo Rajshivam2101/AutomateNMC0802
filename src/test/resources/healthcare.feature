@@ -8,6 +8,18 @@ Feature: HealthCare
     And user Click In OP Registration Option
     And user Navigate To OP Registration Screen
 
+
+
+    @CommonSteps
+      Scenario: Common Steps for HomePage
+      Given user login into nmc Application
+      When user enters the login details
+      And user Click In OP Registration Option
+      And user click on patient option
+      And user navigate to OP List
+
+
+
   @testcase2
   Scenario: OP Registration
     Given user login into nmc Application
